@@ -1,0 +1,20 @@
+-- 1) select all MusicPlayerMaster records       
+  
+   
+CREATE PROCEDURE [dbo].[USP_MusicAlbum_SelectALL]     
+(    
+     @AlbumName            VARCHAR(100)     = ''      
+      )         
+AS                                                                  
+BEGIN         
+        SELECT  MusicID, 
+                           SingerName ,  
+			   AlbumName , 
+			   MusicFileName, 
+			   Description   
+        FROM MusicPlayerMaster  
+        WHERE  
+                AlbumName like  @AlbumName +'%'  
+          
+END 
+
